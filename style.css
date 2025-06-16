@@ -1,45 +1,61 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand&display=swap');
 
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+body {
   font-family: 'Quicksand', sans-serif;
   background: linear-gradient(135deg, #ffcad4, #ffe5ec);
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  text-align: center;
+  overflow-x: hidden;
+  padding: 20px;
   position: relative;
 }
 
 .container {
   background: #fff0f5;
-  padding: 40px;
+  padding: 30px 20px;
   border-radius: 25px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
-  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  width: 100%;
   max-width: 500px;
-  width: 90%;
-  position: relative;
   z-index: 1;
 }
 
 h1 {
   font-family: 'Great Vibes', cursive;
-  font-size: 36px;
+  font-size: 32px;
   color: #d6336c;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
+}
+
+p#mensagem {
+  margin-top: 20px;
+  font-size: 20px;
+  color: #e63956;
+  font-weight: bold;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .buttons button {
-  margin: 10px;
-  padding: 12px 25px;
+  padding: 14px;
   font-size: 18px;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background 0.3s;
 }
 
 .buttons button:first-child {
@@ -48,25 +64,34 @@ h1 {
 }
 
 .buttons button:first-child:hover {
-  background-color: #e63956;
+  background-color: #d6336c;
 }
 
 .buttons button:last-child {
   background-color: #ccc;
+  color: #333;
 }
 
 .buttons button:last-child:hover {
-  background-color: #999;
+  background-color: #aaa;
 }
 
-#mensagem {
-  margin-top: 25px;
-  font-size: 22px;
-  color: #e63956;
-  font-weight: bold;
+.galeria {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
 }
 
-/* Corações animados */
+.galeria img {
+  width: 100%;
+  max-width: 280px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Floating hearts */
 .heart {
   position: absolute;
   width: 20px;
@@ -105,43 +130,18 @@ h1 {
   }
 }
 
-.galeria {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 20px;
-}
-
-.galeria img {
-  width: 200px;
-  height: auto;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
- @media (max-width: 600px) {
-  .container {
-    padding: 20px;
-  }
-
+/* 📱 Estilos para celular (responsividade) */
+@media (max-width: 480px) {
   h1 {
     font-size: 28px;
   }
 
   .buttons button {
     font-size: 16px;
-    padding: 10px 20px;
-    width: 100%;
-    margin: 8px 0;
+    padding: 12px;
   }
 
   .galeria img {
-    width: 100%;
-    max-width: 300px;
-  }
-
-  .galeria {
-    flex-direction: column;
-    align-items: center;
+    max-width: 90%;
   }
 }
